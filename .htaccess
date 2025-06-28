@@ -1,4 +1,23 @@
 # GitHub Pages MIME Type Configuration
+# Force correct MIME types for JavaScript modules
+<FilesMatch "\.(js|mjs)$">
+    Header set Content-Type "application/javascript; charset=utf-8"
+    Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
+
+<FilesMatch "\.css$">
+    Header set Content-Type "text/css; charset=utf-8"
+</FilesMatch>
+
+<FilesMatch "\.json$">
+    Header set Content-Type "application/json; charset=utf-8"
+</FilesMatch>
+
+<FilesMatch "\.svg$">
+    Header set Content-Type "image/svg+xml; charset=utf-8"
+</FilesMatch>
+
+# Fallback MIME types
 AddType application/javascript .js
 AddType application/javascript .mjs
 AddType text/css .css
